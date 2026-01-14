@@ -8,7 +8,7 @@ def parse_email(service, msg_id):
     sender = next(h["value"] for h in headers if h["name"] == "From")
     date = next(h["value"] for h in headers if h["name"] == "Date")
 
-    # Get body
+  
     parts = message["payload"].get("parts", [])
     body = ""
     for part in parts:
@@ -21,8 +21,9 @@ def parse_email(service, msg_id):
             body = soup.get_text()
             break
 
-    # Decode base64 if needed
+  
     import base64
     body = base64.urlsafe_b64decode(body.encode("UTF-8")).decode("UTF-8")
 
     return sender, subject, date, body
+
