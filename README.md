@@ -3,8 +3,11 @@ My name is Ekta
 I have created this automation of:
 
 Build a Python automation system that connects to:
+
  Gmail API
+
  Google Sheets API
+
 The system must read real incoming emails from your own Gmail account and log
 them into a Google Sheet. 
 
